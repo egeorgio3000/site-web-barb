@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garde d'Animaux - Annecy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Sora:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-top">
+          <div class="brand">
+            <img src="image_zoom.png" alt="Logo" class="brand-logo" />
+            <div>
+              <p class="brand-overline">Annecy•Petsitting</p>
+              <h1 class="brand-title">Petsitting sur Annecy et ses alentours</h1>
+            </div>
+          </div>
+          <nav class="tabs" aria-label="Onglets">
+            <button class="tab-button is-active" data-tab="presentation">Presentation</button>
+            <button class="tab-button" data-tab="contact">Contact</button>
+          </nav>
+        </div>
+        <div class="hero-card">
+          <p class="hero-highlight">
+            Disponible en semaine et week-end, visites a domicile, promenades, et
+            garde de vos animaux dans un cadre calme et securise.
+          </p>
+          <div class="hero-tags">
+            <span>Chats & chiens</span>
+            <span>Balades nature</span>
+            <span>Suivi photo</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="tab-panel is-active" id="presentation" aria-labelledby="presentation-tab">
+          <div class="panel-grid">
+            <article class="panel-card">
+              <h2>Presentation</h2>
+              <p>
+                Je m'appelle Barbara, passionnée par les animaux depuis
+                toujours. J'assure des visites, des promenades et une présence rassurante
+                pour que vos compagnons à quatre pattes et vous mêmes restent sereins en votre absence.
+              </p>
+              <ul class="panel-list">
+                <li>Sorties et promenades, visite et garde à domicile</li>
+                <li>Chiens, chats et autres compagnons (quatres pattes max svp)</li>
+                <li>Complicité, sécurité et bien-être</li>
+              </ul>
+            </article>
+            <article class="panel-card">
+              <h2>Tarifs</h2>
+              <div class="price-list">
+                <div class="price-item">
+                  <div>
+                    <h3>Visite a domicile</h3>
+                    <p>30 a 45 min, nourriture, jeux, câlins.</p>
+                  </div>
+                  <span>20 EUR</span>
+                </div>
+                <div class="price-item">
+                  <div>
+                    <h3>Promenade</h3>
+                    <p>Balade adaptée au rythme de l'animal.</p>
+                  </div>
+                  <span>18 EUR</span>
+                </div>
+                <div class="price-item">
+                  <div>
+                    <h3>Garde demi-journée</h3>
+                    <p>Présence continue pour chiens ou chats.</p>
+                  </div>
+                  <span>45 EUR</span>
+                </div>
+              </div>
+              <p class="panel-note">Frais de déplacement offerts sur Annecy centre.</p>
+            </article>
+            <article class="panel-card">
+              <h2>Fonctionnement</h2>
+              <ol class="panel-steps">
+                <li>Premier contact par message ou téléphone.</li>
+                <li>Rencontre gratuite pour définir les besoins.</li>
+                <li>Planning sur mesure et confirmation écrite.</li>
+                <li>Suivi photo et nouvelles à chaque visite.</li>
+              </ol>
+            </article>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="contact" aria-labelledby="contact-tab">
+          <div class="panel-grid">
+            <article class="panel-card">
+              <h2>Contact</h2>
+              <p>
+                Dites-moi tout sur votre animal et vos dates. Je reponds sous 24h pour
+                confirmer la disponibilité.
+              </p>
+              <div class="contact-info">
+                <p><strong>Telephone</strong> 06 00 00 00 00</p>
+                <p><strong>Email</strong> hello@petsitting-annecy.fr</p>
+                <p><strong>Zone</strong> Annecy et alentours</p>
+              </div>
+            </article>
+            <article class="panel-card">
+              <h2>Formulaire</h2>
+              <form class="contact-form" id="contact-form">
+                <label>
+                  Nom
+                  <input type="text" name="name" placeholder="Votre nom" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="nom@email.fr" required />
+                </label>
+                <label>
+                  Dates souhaitées
+                  <input type="text" name="dates" placeholder="Ex: 12-15 avril" />
+                </label>
+                <label>
+                  Message
+                  <textarea name="message" rows="4" placeholder="Informations sur votre animal"></textarea>
+                </label>
+                <button type="submit">Envoyer la demande</button>
+                <p class="form-feedback" id="form-feedback" aria-live="polite"></p>
+              </form>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <section class="reviews" aria-live="polite">
+        <div class="review-card" id="review-card">
+          <p class="review-text" id="review-text"></p>
+          <p class="review-author" id="review-author"></p>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
