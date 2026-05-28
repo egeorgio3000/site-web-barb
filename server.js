@@ -16,6 +16,21 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
+  if (req.url === "/api/galerie") {
+    const galerieDir = path.join(__dirname, "galerie");
+    fs.readdir(galerieDir, (err, files) => {
+      if (err) {
+        res.writeHead(500);
+        res.end("Server error");
+        return;
+      }
+      const images = files.filter(f => /\.(jpg|jpeg|png|gif|webp)$/i.test(f));
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify(images));
+    });
+    return;
+  }
+
   const safePath = req.url === "/" ? "/index.html" : req.url;
   const filePath = path.join(__dirname, safePath);
   const ext = path.extname(filePath).toLowerCase();

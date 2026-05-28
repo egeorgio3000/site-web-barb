@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="page">
-      <header class="hero">
+      <div class="hero">
         <div class="hero-top">
           <div class="brand">
             <img src="image_zoom.jpg" alt="Logo" class="brand-logo" />
@@ -26,9 +26,10 @@
           </div>
           <nav class="tabs" aria-label="Onglets">
             <button class="tab-button is-active" data-tab="presentation">Presentation</button>
-            <button class="tab-button" data-tab="contact">Contact</button>
+            <button class="tab-button" data-tab="galerie">Galerie</button>
           </nav>
         </div>
+        <div class="tab-panel is-active" id="presentation">
         <div class="hero-card">
           <div class="hero-content">
             <p class="hero-highlight">
@@ -82,112 +83,13 @@
                   </div>
                 </div>
               </div>
-        </div>
-        </div>
-        
-      </header>
-
-      <main>
-        <!-- <section class="tab-panel is-active" id="presentation" aria-labelledby="presentation-tab">
-          <div class="panel-grid">
-            <article class="panel-card">
-              <h2>Presentation</h2>
-              <p>
-                Je m'appelle Barbara, passionnée par les animaux depuis
-                toujours. J'assure des visites, des promenades et une présence rassurante
-                pour que vos compagnons à quatre pattes et vous mêmes restent sereins en votre absence.
-              </p>
-              <ul class="panel-list">
-                <li>Sorties et promenades, visite et garde à domicile</li>
-                <li>Chiens, chats et autres compagnons (quatres pattes max svp)</li>
-                <li>Complicité, sécurité et bien-être</li>
-              </ul>
-            </article>
-            <article class="panel-card">
-              <h2>Tarifs</h2>
-              <div class="price-list">
-                <div class="price-item">
-                  <div>
-                    <h3>Visite a domicile jemme</h3>
-                    <p>30 a 45 min, nourriture, jeux, câlins.</p>
-                  </div>
-                  <span>20 EUR</span>
-                </div>
-                <div class="price-item">
-                  <div>
-                    <h3>Promenade</h3>
-                    <p>Balade adaptée au rythme de l'animal.</p>
-                  </div>
-                  <span>18 EUR</span>
-                </div>
-                <div class="price-item">
-                  <div>
-                    <h3>Garde demi-journée</h3>
-                    <p>Présence continue pour chiens ou chats.</p>
-                  </div>
-                  <span>45 EUR</span>
-                </div>
-              </div>
-            </article>
-            <article class="panel-card"> 
-              <h2>Fonctionnement</h2>
-              <ol class="panel-steps">
-                <li>Premier contact par message ou téléphone.</li>
-                <li>Rencontre gratuite pour définir les besoins.</li>
-                <li>Planning sur mesure et confirmation écrite.</li>
-                <li>Suivi photo et nouvelles à chaque visite.</li>
-              </ol>
-            </article>
           </div>
-        </section> -->
-
-        <section class="tab-panel" id="contact" aria-labelledby="contact-tab">
-          <div class="panel-grid">
-            <article class="panel-card">
-              <h2>Contact</h2>
-              <p>
-                Dites-moi tout sur votre animal et vos dates. Je reponds sous 24h pour
-                confirmer la disponibilité.
-              </p>
-              <div class="contact-info">
-                <p><strong>Telephone</strong> 06 00 00 00 00</p>
-                <p><strong>Email</strong> hello@petsitting-annecy.fr</p>
-                <p><strong>Zone</strong> Annecy et alentours</p>
-              </div>
-            </article>
-            <article class="panel-card">
-              <h2>Formulaire</h2>
-              <form class="contact-form" id="contact-form">
-                <label>
-                  Nom
-                  <input type="text" name="name" placeholder="Votre nom" required />
-                </label>
-                <label>
-                  Email
-                  <input type="email" name="email" placeholder="nom@email.fr" required />
-                </label>
-                <label>
-                  Dates souhaitées
-                  <input type="text" name="dates" placeholder="Ex: 12-15 avril" />
-                </label>
-                <label>
-                  Message
-                  <textarea name="message" rows="4" placeholder="Informations sur votre animal"></textarea>
-                </label>
-                <button type="submit">Envoyer la demande</button>
-                <p class="form-feedback" id="form-feedback" aria-live="polite"></p>
-              </form>
-            </article>
-          </div>
-        </section>
-      </main>
-
-      <section class="reviews" aria-live="polite">
-        <div class="review-card" id="review-card">
-          <p class="review-text" id="review-text"></p>
-          <p class="review-author" id="review-author"></p>
         </div>
-      </section>
+        </div>
+        <div class="tab-panel" id="galerie">
+          <div class="galerie"></div>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>

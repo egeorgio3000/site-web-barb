@@ -92,3 +92,21 @@ const loadReviews = async () => {
 };
 
 loadReviews();
+
+const loadGalerie = async () => {
+  const galerieDiv = document.querySelector(".galerie");
+  if (!galerieDiv) return;
+
+  try {
+    const response = await fetch("/api/galerie");
+    if (!response.ok) throw new Error("Failed to load galerie");
+    const images = await response.json();
+    galerieDiv.innerHTML = images
+      .map(img => `<div class="galerie-item"><img src="galerie/${img}" alt=""></div>`)
+      .join("");
+  } catch (error) {
+    console.error("Galerie:", error);
+  }
+};
+
+loadGalerie();
