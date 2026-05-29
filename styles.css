@@ -154,6 +154,25 @@ body {
   z-index: 1;
   max-width: 60%;
 }
+
+.hero-actions {
+  display: flex;
+  gap: 28px;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+}
+
+.hero-action-btn {
+  display: inline-flex;
+  color: var(--accent);
+  transition: all 0.2s ease;
+}
+
+.hero-action-btn:hover {
+  opacity: 0.5;
+  transform: translateY(-2px);
+}
 .panel-card {
   background: rgba(255, 255, 255, 0.65);
   border-radius: 24px;
@@ -255,6 +274,38 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  cursor: pointer;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(12px);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  object-fit: contain;
+  cursor: default;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  animation: lightboxIn 0.25s ease;
+}
+
+@keyframes lightboxIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
 }
 
 

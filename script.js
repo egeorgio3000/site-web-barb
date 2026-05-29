@@ -93,6 +93,47 @@ const loadReviews = async () => {
 
 loadReviews();
 
+// --- Lightbox ---
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+const lightbox = document.createElement("div");
+lightbox.className = "lightbox";
+const lightboxImg = document.createElement("img");
+lightboxImg.className = "lightbox-img";
+lightbox.appendChild(lightboxImg);
+document.body.appendChild(lightbox);
+
+const openLightbox = (srcs, index) => {
+  lightboxImages = srcs;
+  lightboxIndex = index;
+  lightboxImg.src = srcs[index];
+  lightbox.classList.add("is-open");
+};
+
+const closeLightbox = () => lightbox.classList.remove("is-open");
+
+const showImage = (index) => {
+  lightboxIndex = (index + lightboxImages.length) % lightboxImages.length;
+  lightboxImg.src = lightboxImages[lightboxIndex];
+};
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightboxImg) {
+    const rect = lightboxImg.getBoundingClientRect();
+    e.clientX - rect.left > rect.width / 2 ? showImage(lightboxIndex + 1) : showImage(lightboxIndex - 1);
+  } else {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (!lightbox.classList.contains("is-open")) return;
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowRight") showImage(lightboxIndex + 1);
+  if (e.key === "ArrowLeft") showImage(lightboxIndex - 1);
+});
+
 const loadGalerie = async () => {
   const galerieDiv = document.querySelector(".galerie");
   if (!galerieDiv) return;
@@ -101,9 +142,13 @@ const loadGalerie = async () => {
     const response = await fetch("/api/galerie");
     if (!response.ok) throw new Error("Failed to load galerie");
     const images = await response.json();
-    galerieDiv.innerHTML = images
-      .map(img => `<div class="galerie-item"><img src="galerie/${img}" alt=""></div>`)
+    const srcs = images.map(img => `galerie/${img}`);
+    galerieDiv.innerHTML = srcs
+      .map((src, i) => `<div class="galerie-item"><img src="${src}" alt="" data-index="${i}"></div>`)
       .join("");
+    galerieDiv.querySelectorAll("img").forEach((img, i) => {
+      img.addEventListener("click", () => openLightbox(srcs, i));
+    });
   } catch (error) {
     console.error("Galerie:", error);
   }
