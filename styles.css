@@ -241,6 +241,24 @@ body {
   line-height: 1.6;
 }
 
+.tarif-card {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.tarif-card h2 {
+  font-family: "Fraunces", serif;
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.tarif-card p {
+  line-height: 1.6;
+}
+
 .price-list {
   display: flex;
   gap: 20px;
@@ -248,43 +266,17 @@ body {
 }
 
 .price-item {
-  /* display: flex;
-  justify-content: space-between; */
   gap: 10px;
-  align-items: center;
   flex: 1 1 0;
-  padding: 14px;
-  /* background: var(--beige); */
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 16px;
-  position: relative;
-  overflow: hidden;
-  height: 400px;
-  --price-bg: url('pice_chat.png');
 }
 
-.price-item:first-child {
-  --price-bg: url('pict_chien.png');
-}
-
-.price-item::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    linear-gradient(to bottom, rgba(251,247,241,0.98) 50%, rgba(251,247,241,0) 100%),
-    var(--price-bg) no-repeat bottom center;
-  background-size: auto, 100% auto;
-  /* pointer-events: none; */
-}
-
-.price-item > div {
-  position: relative;
-  z-index: 1;
-}
-
-.price-item span {
-  font-weight: 600;
+.price-item h2 {
+  font-family: "Fraunces", serif;
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
 .price-options {
@@ -374,11 +366,12 @@ body {
 
 @media (max-width: 720px) {
   .page {
-    padding: 24px 6vw 60px;
+    padding: 16px 4vw 40px;
   }
 
   .hero {
-    padding: 24px;
+    padding: 16px;
+    gap: 16px;
   }
 
   .brand {
@@ -394,6 +387,49 @@ body {
   .tab-button {
     flex: 1;
     text-align: center;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .hero-card {
+    padding: 16px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .panel-card {
+    padding: 16px;
+  }
+
+  .panel-card h2 {
+    font-size: 18px;
+  }
+
+  .panel-card p {
+    font-size: 13px;
+  }
+
+  .price-list {
+    flex-direction: column;
+  }
+
+  .price-item {
+    height: 220px;
+  }
+
+  .option h4 {
+    font-size: 12px;
+  }
+
+  .option span {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .galerie {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .review-card {
