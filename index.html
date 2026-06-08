@@ -26,7 +26,8 @@
           </div>
           <nav class="tabs" aria-label="Onglets">
             <button class="tab-button is-active" data-tab="presentation">Presentation</button>
-            <button class="tab-button" data-tab="galerie">Tarifs</button>
+            <button class="tab-button" data-tab="galerie">Prestations</button>
+            <button class="tab-button" data-tab="contact">Contact</button>
           </nav>
         </div>
         <div class="tab-panel is-active" id="presentation">
@@ -44,8 +45,9 @@
               </div>
             </div>
           </div>
+          <div class="presentation-row">
           <div class="panel-card">
-            <h2>Présentation</h2>
+            <h2>Faisons connaissance</h2>
             <div class="hero-content">
               <p class="hero-highlight">
                 Hello, moi c'est Barbara
@@ -75,7 +77,14 @@
                 <span>Suivi photo</span> -->
             </div>
           </div>
-          <div class="galerie">
+          <div class="presentation-photo">
+            <img src="pict_entet.jpeg" alt="Barbara petsitter">
+          </div>
+          </div>
+          <div class="galerie-card">
+            <h3 class="galerie-title">En balade avec nous</h3>
+            <div class="galerie">
+          </div>
           </div>
         </div>
         <div class="tab-panel" id="galerie">
@@ -103,6 +112,24 @@
                   </div>
                 </div>
             <!-- </div> -->
+          </div>
+        </div>
+        <div class="tab-panel" id="contact">
+          <div class="contact-card">
+            <h2>Nous contacter</h2>
+            <form id="contact-form" class="contact-form">
+              <div class="contact-form-row">
+                <label>Nom<input type="text" name="nom"></label>
+                <label>Prénom<input type="text" required name="prenom"></label>
+              </div>
+              <div class="contact-form-row">
+                <label>Email<input type="email" name="mail" required placeholder="mail@exemple.fr"></label>
+                <label>Téléphone<input type="tel" name="telephone" placeholder="06 00 00 00 00"></label>
+              </div>
+              <label>Message<textarea name="message" rows="5" required placeholder="Indique moi la prestation que tu souhaites, où tu habites, la date souhaitée, etc..."></textarea></label>
+              <button type="submit">Envoyer</button>
+              <p class="form-feedback" id="form-feedback"></p>
+            </form>
           </div>
         </div>
         <div class="hero-actions">

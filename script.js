@@ -155,3 +155,29 @@ const loadGalerie = async () => {
 };
 
 loadGalerie();
+
+const contactForm = document.getElementById("contact-form");
+const formFeedback = document.getElementById("form-feedback");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(contactForm));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+      if (json.ok) {
+        formFeedback.textContent = "Message envoyé avec succès !";
+        contactForm.reset();
+      } else {
+        formFeedback.textContent = "Erreur lors de l'envoi. Veuillez réessayer.";
+      }
+    } catch {
+      formFeedback.textContent = "Erreur réseau. Veuillez réessayer.";
+    }
+  });
+}
