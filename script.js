@@ -170,8 +170,10 @@ if (contactForm) {
         body: JSON.stringify(data)
       });
       const json = await res.json();
+      console.log("message envoyé:", json);
       if (json.ok) {
         formFeedback.textContent = "Message envoyé avec succès !";
+        
         contactForm.reset();
       } else {
         formFeedback.textContent = "Erreur lors de l'envoi. Veuillez réessayer.";

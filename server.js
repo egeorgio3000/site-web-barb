@@ -6,7 +6,7 @@ const nodemailer = require("nodemailer");
 const MAIL_TO = "etienne.georgiou-prestataire@ca-gip.fr";
 // Renseigne tes identifiants SMTP ici ou via variables d'environnement :
 const SMTP_USER = process.env.SMTP_USER || "TON_MAIL@gmail.com";
-const SMTP_PASS = process.env.SMTP_PASS || "dhnohmsntqvceojb";
+const SMTP_PASS = process.env.SMTP_PASS || "monmotdepasse";
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
