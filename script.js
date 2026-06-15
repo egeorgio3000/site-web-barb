@@ -142,7 +142,7 @@ const loadGalerie = async () => {
     const response = await fetch("/api/galerie");
     if (!response.ok) throw new Error("Failed to load galerie");
     const images = await response.json();
-    const srcs = images.map(img => `galerie/${img}`);
+    const srcs = images.map(img => `galerie-v2/${img}`);
     galerieDiv.innerHTML = srcs
       .map((src, i) => `<div class="galerie-item"><img src="${src}" alt="" data-index="${i}"></div>`)
       .join("");
@@ -163,6 +163,7 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(contactForm));
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -170,7 +171,6 @@ if (contactForm) {
         body: JSON.stringify(data)
       });
       const json = await res.json();
-      console.log("message envoyé:", json);
       if (json.ok) {
         formFeedback.textContent = "Message envoyé avec succès !";
         

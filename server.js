@@ -2,8 +2,8 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const nodemailer = require("nodemailer");
-
-const MAIL_TO = "etienne.georgiou-prestataire@ca-gip.fr";
+require("dotenv").config();
+const MAIL_TO = "etienne.georgiou@gmail.fr";
 // Renseigne tes identifiants SMTP ici ou via variables d'environnement :
 const SMTP_USER = process.env.SMTP_USER || "TON_MAIL@gmail.com";
 const SMTP_PASS = process.env.SMTP_PASS || "monmotdepasse";

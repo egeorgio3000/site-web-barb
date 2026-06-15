@@ -70,6 +70,12 @@ body {
   font-family: "Fraunces", serif;
   font-size: clamp(28px, 3.5vw, 44px);
   line-height: 1.1;
+  color: black
+}
+
+.brand-title .emoji {
+  color: inherit;
+  font-family: "Segoe UI Symbol", "Noto Color Emoji", "Apple Color Emoji", sans-serif;
 }
 
 .tabs {
@@ -121,6 +127,11 @@ body {
 .hero-highlight {
   font-size: 18px;
   line-height: 1.5;
+  margin-bottom: 9px;
+}
+
+.hero-bottom {
+  margin-top: 9px;
 }
 
 .hero-card p {
@@ -256,17 +267,26 @@ body {
   border-radius: 24px;
   padding: 24px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  container-type: inline-size;
   backdrop-filter: blur(6px);
 }
 
-.panel-card h2 {
+.tarif-card p {
   font-family: "Fraunces", serif;
-  font-size: 24px;
-  margin-bottom: 14px;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .panel-card p {
   line-height: 1.6;
+  font-size: clamp(0.95rem, 0.9vw + 0.4rem, 1.05rem);
+}
+
+@media (min-width: 1500px) {
+  .panel-card p {
+    font-size: 1.25rem;
+  }
 }
 
 .tarif-card {
@@ -301,6 +321,10 @@ body {
   border-radius: 16px;
 }
 
+.price-item > div {
+  text-align: center;
+}
+
 .price-item h2 {
   font-family: "Fraunces", serif;
   font-size: 20px;
@@ -325,6 +349,13 @@ body {
   margin-top: 16px;
   font-size: 14px;
   color: #4b4037;
+}
+
+@media (max-width: 720px) {
+  .panel-note{
+    font-size: 10px;
+  }
+  
 }
 
 .galerie-title {
