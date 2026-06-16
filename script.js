@@ -6,6 +6,9 @@ const reviewCard = document.getElementById("review-card");
 const reviewText = document.getElementById("review-text");
 const reviewAuthor = document.getElementById("review-author");
 
+const footerYear = document.getElementById("footer-year");
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 const switchTab = (targetId) => {
   tabButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.tab === targetId);
@@ -15,20 +18,13 @@ const switchTab = (targetId) => {
     panel.classList.toggle("is-active", panel.id === targetId);
   });
 };
+window.switchTab = switchTab;
 
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => switchTab(button.dataset.tab));
 });
 
-if (form) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (feedback) {
-      feedback.textContent = "Merci ! Votre demande a bien ete envoyee.";
-    }
-    form.reset();
-  });
-}
+
 
 const defaultReviews = [
   {
@@ -142,7 +138,7 @@ const loadGalerie = async () => {
     const response = await fetch("/api/galerie");
     if (!response.ok) throw new Error("Failed to load galerie");
     const images = await response.json();
-    const srcs = images.map(img => `galerie-v2/${img}`);
+    const srcs = images.map(img => `galerie/${img}`);
     galerieDiv.innerHTML = srcs
       .map((src, i) => `<div class="galerie-item"><img src="${src}" alt="" data-index="${i}"></div>`)
       .join("");
@@ -163,7 +159,7 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(contactForm));
-
+    console.log("Sending contact form data:", data);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
