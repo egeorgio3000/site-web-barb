@@ -19,7 +19,7 @@ build:
     - mkdir -p ~/.ssh
     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
-    - ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
+    - echo "$REMOTE_HOST $PUBLIC_KEY" >> ~/.ssh/known_hosts
     - docker save ${IMAGE_NAME}:${IMAGE_TAG} | gzip | ssh ${REMOTE_USER}@${REMOTE_HOST} "gunzip | docker load"
   when: manual
   
