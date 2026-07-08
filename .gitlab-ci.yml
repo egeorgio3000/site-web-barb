@@ -47,5 +47,4 @@ deploy:
           --env SMTP_PASS=$SMTP_PASS \
           $IMAGE_LATEST
       "
-  only:
-    - main
+  when: manual
