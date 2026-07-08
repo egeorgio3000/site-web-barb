@@ -20,8 +20,8 @@ build:
     - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
     - echo "$REMOTE_HOST $PUBLIC_KEY" >> ~/.ssh/known_hosts
-    - echo $REMOTE_USER@$REMOTE_HOST
-    - ssh $REMOTE_USER@$REMOTE_HOST -v
+    - chmod 600 ~/.ssh/known_hosts
+    - cat ~/.ssh/known_hosts
     - docker save $IMAGE_NAME:$IMAGE_TAG | gzip | ssh $REMOTE_USER@$REMOTE_HOST "gunzip | docker load"
   when: manual
   
