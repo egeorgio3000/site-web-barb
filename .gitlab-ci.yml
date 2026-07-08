@@ -11,15 +11,18 @@ build:
   image: docker:24
   services:
     - docker:24-dind
-  before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  variables:
+    IMAGE_NAME: img_site_web_barb
+    IMAGE_TAG: "1.0.0"
   script:
-    - docker build -t $IMAGE -t $IMAGE_LATEST .
-    - docker push $IMAGE
-    - docker push $IMAGE_LATEST
-  only:
-    - main
-
+    - docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
+    - docker save ${IMAGE_NAME}:${IMAGE_TAG} | gzip | ssh ${REMOTE_USER}@${REMOTE_HOST} "gunzip | docker load"
+  when: manual
+  
 deploy:
   stage: deploy
   image: alpine:latest
