@@ -1,0 +1,5 @@
+-> changer police: Playfair Display pour les titres Montserrat pour les textess
+-> finir svg emojis
+-> mettre photos
+-> réajuster taille de textes
+-> terminer config nodemailer

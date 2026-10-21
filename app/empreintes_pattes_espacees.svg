@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" viewBox="0 0 160 100" role="img" aria-labelledby="title">
+  <title id="title">Empreintes de pattes espacées</title>
+  <g fill="#000000">
+    <g transform="translate(0 0) rotate(-18 34 34)">
+      <ellipse cx="34" cy="51" rx="17" ry="13"/>
+      <ellipse cx="14" cy="31" rx="7" ry="10" transform="rotate(-22 14 31)"/>
+      <ellipse cx="30" cy="19" rx="7" ry="10" transform="rotate(-8 30 19)"/>
+      <ellipse cx="47" cy="20" rx="7" ry="10" transform="rotate(10 47 20)"/>
+      <ellipse cx="61" cy="32" rx="7" ry="10" transform="rotate(25 61 32)"/>
+    </g>
+    <g transform="translate(64 18) rotate(18 34 34)">
+      <ellipse cx="34" cy="51" rx="17" ry="13"/>
+      <ellipse cx="14" cy="31" rx="7" ry="10" transform="rotate(-22 14 31)"/>
+      <ellipse cx="30" cy="19" rx="7" ry="10" transform="rotate(-8 30 19)"/>
+      <ellipse cx="47" cy="20" rx="7" ry="10" transform="rotate(10 47 20)"/>
+      <ellipse cx="61" cy="32" rx="7" ry="10" transform="rotate(25 61 32)"/>
+    </g>
+  </g>
+</svg>
